@@ -19,7 +19,7 @@ public class User {
 	private Boolean enabled;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
-	private List<ObjRep> pedidos;
+	private List<Objrep> objreps;
 	
 	public String getUsername() {
 		return username;

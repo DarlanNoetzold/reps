@@ -9,19 +9,19 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import tech.noetzold.reps.model.ObjRep;
+import tech.noetzold.reps.model.Objrep;
 import tech.noetzold.reps.model.StatusRep;
 
 @Repository
-public interface ObjRepRepository extends JpaRepository<ObjRep, Long> {
+public interface ObjRepRepository extends JpaRepository<Objrep, Long> {
 	
 	@Cacheable("books")
-	List<ObjRep> findByStatus(StatusRep status, Pageable sort);
+	List<Objrep> findByStatus(StatusRep status, Pageable sort);
 
-	@Query("select p from ObjRep p join p.user u where u.username = :username")
-	List<ObjRep> findAllByUsuario(@Param("username")String username);
+	@Query("select p from Objrep p join p.user u where u.username = :username")
+	List<Objrep> findAllByUsuario(@Param("username")String username);
 
-	@Query("select p from ObjRep p join p.user u where u.username = :username and p.status = :status")
-	List<ObjRep> findByStatusEUsuario(@Param("status")StatusRep status, @Param("username")String username);
+	@Query("select p from Objrep p join p.user u where u.username = :username and p.status = :status")
+	List<Objrep> findByStatusEUsuario(@Param("status")StatusRep status, @Param("username")String username);
 
 }

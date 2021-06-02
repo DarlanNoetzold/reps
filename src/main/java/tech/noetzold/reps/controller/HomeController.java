@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import tech.noetzold.reps.model.ObjRep;
+import tech.noetzold.reps.model.Objrep;
 import tech.noetzold.reps.model.StatusRep;
 import tech.noetzold.reps.repository.ObjRepRepository;
 
@@ -28,7 +28,7 @@ public class HomeController {
 		Sort sort = Sort.by("dataDaEntrega").descending();
 		PageRequest paginacao = PageRequest.of(0, 10, sort);
 		
-		List<ObjRep> pedidos = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacao);
+		List<Objrep> pedidos = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacao);
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
