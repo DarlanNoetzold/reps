@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import tech.noetzold.reps.model.Objrep;
 import tech.noetzold.reps.model.StatusRep;
-import tech.noetzold.reps.repository.ObjRepRepository;
+import tech.noetzold.reps.repository.ObjrepRepository;
 
 
 @Controller
@@ -21,7 +21,7 @@ import tech.noetzold.reps.repository.ObjRepRepository;
 public class HomeController {
 	
 	@Autowired
-	private ObjRepRepository objRepRepository;
+	private ObjrepRepository objRepRepository;
 	
 	@GetMapping
 	public String home(Model model, Principal principal) {

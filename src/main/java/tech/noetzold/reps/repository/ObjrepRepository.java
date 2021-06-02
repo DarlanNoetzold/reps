@@ -13,7 +13,7 @@ import tech.noetzold.reps.model.Objrep;
 import tech.noetzold.reps.model.StatusRep;
 
 @Repository
-public interface ObjRepRepository extends JpaRepository<Objrep, Long> {
+public interface ObjrepRepository extends JpaRepository<Objrep, Long> {
 	
 	@Cacheable("books")
 	List<Objrep> findByStatus(StatusRep status, Pageable sort);
