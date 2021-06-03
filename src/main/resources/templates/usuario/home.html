@@ -1,0 +1,47 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	<body>
+		<div th:replace="~{base :: logo}"></div>
+	
+		<div class="container">
+			<div th:replace="~{base :: titulo('Meus Repositórios')}"></div>
+		
+			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+				<div class="navbar-nav">
+					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/pedido}">Todos</a>
+					<a th:classappend="${status} == 'DESENVOLVIMENTO' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/aguardando}">DESENVOLVIMENTO</a>
+					<a th:classappend="${status} == 'TERMINADO' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/aprovado}">TERMINADO</a>
+					<a th:classappend="${status} == 'DESCONHECIDO' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/entregue}">DESCONHECIDO</a>
+				</div>
+				<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+			</nav>
+		
+			<div class="card mb-3" th:each="pedido : ${pedidos}">
+				<th:block th:switch="${pedido.status.name()}">
+					<div th:case="'DESENVOLVIMENTO'" class="card-header alert-warning" th:text="${objrep.nomeRep}">Nome do Repositório</div>
+					<div th:case="'TERMINADO'" class="card-header alert-success" th:text="${objrep.nomeRep}">Nome do Repositório</div>
+					<div th:case="'DESCONHECIDO'" class="card-header alert-dark" th:text="${objrep.nomeRep}">Nome do Repositório</div>
+				</th:block>
+				
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12 col-sm-8  mb-3">		
+							<div>Produto</div>
+							<div> <input class="form-control" th:value="${objrep.urlRep}" value="url do objrep"/></div>
+							
+							<div>Descrição</div>
+							<div>
+								<textarea class="form-control" th:text="${objrep.descricao}">descrição do Repositório</textarea>
+							</div>
+						</div>
+						<div class="col-12 col-sm-4">
+							<div>
+								<img class="img-thumbnail" th:src="${objrep.urlImagem}" src=""/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

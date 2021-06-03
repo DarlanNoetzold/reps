@@ -28,13 +28,13 @@ public class ObjrepController {
 
 	@GetMapping("formulario")
 	public String formulario(RequisicaoNovoObjrep requisicao) {
-		return "pedido/formulario";
+		return "objrep/formulario";
 	}
 	
 	@PostMapping("novo")
 	public String novo(@Valid RequisicaoNovoObjrep requisicao, BindingResult result) {
 		if(result.hasErrors()) {
-			return "pedido/formulario";
+			return "objrep/formulario";
 		}
 		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
