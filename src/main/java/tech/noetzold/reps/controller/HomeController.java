@@ -28,8 +28,8 @@ public class HomeController {
 		Sort sort = Sort.by("nomeRep").descending();
 		PageRequest paginacao = PageRequest.of(0, 10, sort);
 		
-		List<Objrep> pedidos = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacao);
-		model.addAttribute("pedidos", pedidos);
+		List<Objrep> objrep = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacao);
+		model.addAttribute("objrep", objrep);
 		
 		return "home";
 	}
