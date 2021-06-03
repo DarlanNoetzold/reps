@@ -40,9 +40,9 @@ public class ObjrepController {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		
 		User usuario = userRepository.findByUsername(username);
-		Objrep pedido = requisicao.toObjrep();
-		pedido.setUser(usuario);
-		pedidoRepository.save(pedido);
+		Objrep objrep = requisicao.toObjrep();
+		objrep.setUser(usuario);
+		pedidoRepository.save(objrep);
 		return "redirect:/home";
 	}
 }

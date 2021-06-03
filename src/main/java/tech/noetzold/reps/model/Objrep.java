@@ -73,7 +73,7 @@ public class Objrep {
 		this.status = status;
 	}
 
-	public String ricao() {
+	public String getDescricao() {
 		return descricao;
 	}
 
