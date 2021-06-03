@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 		.formLogin(form -> form
             .loginPage("/login")
-            .defaultSuccessUrl("/usuario/pedido", true)
+            .defaultSuccessUrl("/usuario/objrep", true)
             .permitAll()
         )
 		.logout(logout -> {
@@ -52,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 //		UserDetails user =
 //				 User.builder()
-//					.username("maria")
-//					.password(encoder.encode("maria"))
+//					.username("darlan")
+//					.password(encoder.encode("darlan"))
 //					.roles("ADM")
 //					.build();
 	}

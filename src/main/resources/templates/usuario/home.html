@@ -8,12 +8,12 @@
 		
 			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 				<div class="navbar-nav">
-					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/pedido}">Todos</a>
+					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep}">Todos</a>
 					<a th:classappend="${status} == 'DESENVOLVIMENTO' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/aguardando}">DESENVOLVIMENTO</a>
 					<a th:classappend="${status} == 'TERMINADO' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/aprovado}">TERMINADO</a>
 					<a th:classappend="${status} == 'DESCONHECIDO' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/entregue}">DESCONHECIDO</a>
 				</div>
-				<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+				<a href="/objrep/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
 			</nav>
 		
 			<div class="card mb-3" th:each="pedido : ${pedidos}">
