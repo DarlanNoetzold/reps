@@ -1,17 +1,20 @@
-<html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<head th:replace="~{base :: head}"></head>
 	<body>
 		<div th:replace="~{base :: logo}"></div>
 	
 		<div class="container">
-			<div th:replace="~{base :: titulo('Novo Repositório')}"></div>
+			<div th:replace="~{base :: titulo('Novo RepositÃ³rio')}"></div>
 			
 			<div class="card mt-3">
 				<form th:action="@{/objrep/novo}" th:object="${requisicaoNovoObjrep}" class="card-body" method="post">
 					<div class="form-group">
 						<label for="nomeRep">Produto</label>
 						<input th:field="*{nomeRep}" th:errorclass="is-invalid" class="form-control" placeholder="nome do objrep"/>
-						<small>Informa qual o nome do Repositório.</small>
+						<small>Informa qual o nome do RepositÃ³rio.</small>
 						<div class="invalid-feedback" th:errors="*{nomeRep}">
 							Erros do nome do produto
 						</div>
@@ -19,7 +22,7 @@
 					<div class="form-group">
 						<label for="urlRep">Url</label>
 						<input th:field="*{urlRep}" th:errorclass="is-invalid" class="form-control" placeholder="url do objrep"/>
-						<small>Procure em um site o Repositório que você deseja e cole a url da página aqui.</small>
+						<small>Procure em um site o RepositÃ³rio que vocÃª deseja e cole a url da pÃ¡gina aqui.</small>
 						<div class="invalid-feedback" th:errors="*{urlRep}">
 							Erros da url do produto
 						</div>
@@ -27,7 +30,7 @@
 					<div class="form-group">
 						<label for="urlImagem">Imagem</label>
 						<input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" placeholder="url da imagem"/>
-						<small>Copie a url de uma boa imagem do Repositório e cole aqui.</small>
+						<small>Copie a url de uma boa imagem do RepositÃ³rio e cole aqui.</small>
 						<div class="invalid-feedback" th:errors="*{urlImagem}">
 							Erros dua url da imagem
 						</div>
