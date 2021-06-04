@@ -16,6 +16,8 @@ public class RequisicaoNovoObjrep {
 	private String urlImagem;
 	private String descricao;
 	
+	private StatusRep status;
+	
 	public String getNomeRep() {
 		return nomeRep;
 	}
@@ -40,6 +42,12 @@ public class RequisicaoNovoObjrep {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public StatusRep getStatus() {
+		return status;
+	}
+	public void setStatus(StatusRep status) {
+		this.status = status;
+	}
 	
 	public Objrep toObjrep() {
 		Objrep objrep = new Objrep();
@@ -47,7 +55,7 @@ public class RequisicaoNovoObjrep {
 		objrep.setNomeRep(nomeRep);
 		objrep.setUrlImagem(urlImagem);
 		objrep.setUrlRep(urlRep);
-		objrep.setStatus(StatusRep.DESENVOLVIMENTO);
+		objrep.setStatus(status);
 		return objrep;
 	}
 	

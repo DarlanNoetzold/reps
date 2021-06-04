@@ -36,6 +36,16 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="status">Status do Repositório</label>
+						<select th:field="*{status}">
+    						<option th:each="Status : ${T(tech.noetzold.reps.model.StatusRep).values()}" th:value="${Status}" th:text="${Status}"></option>
+						</select>
+						<small>Selecione o Status.</small>
+						<div class="invalid-feedback" th:errors="*{status}">
+							Erro
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="descricao">Descricao</label>
 						<textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes importantes"></textarea>
 					</div>
