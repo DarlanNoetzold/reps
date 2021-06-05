@@ -11,8 +11,6 @@ public class RequisicaoNovoObjrep {
 	
 	@NotBlank
 	private String urlRep;
-	
-	@NotBlank
 	private String urlImagem;
 	private String descricao;
 	
@@ -31,7 +29,11 @@ public class RequisicaoNovoObjrep {
 		this.urlRep = urlProduto;
 	}
 	public String getUrlImagem() {
-		return urlImagem;
+		if(urlImagem == null) {
+			return "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png";
+		}else {
+			return urlImagem;
+		}
 	}
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
