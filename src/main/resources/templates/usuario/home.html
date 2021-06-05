@@ -9,7 +9,7 @@
 		<div class="container">
 			<div th:replace="~{base :: titulo('Meus Repositórios')}" ></div>
 		
-			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3 cardcolor">
+			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 				<div class="navbar-nav">
 					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep}">Todos</a>
 					<a th:classappend="${status} == 'desenvolvimento' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/desenvolvimento}">DESENVOLVIMENTO</a>
