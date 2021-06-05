@@ -3,13 +3,13 @@
 <html lang="pt-br">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<head th:replace="~{base :: head}"></head>
-	<body>
+	<body id="backforall">
 		<div th:replace="~{base :: logo}"></div>
 	
 		<div class="container">
 			<div th:replace="~{base :: titulo('Novo Repositório')}"></div>
 			
-			<div class="card mt-3">
+			<div class="cardcolor card mt-3">
 				<form th:action="@{/objrep/novo}" th:object="${requisicaoNovoObjrep}" class="card-body" method="post">
 					<div class="form-group">
 						<label for="nomeRep">Produto</label>
@@ -49,7 +49,7 @@
 						<label for="descricao">Descricao</label>
 						<textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes importantes"></textarea>
 					</div>
-					<button class="btn btn-primary" type="submit">Cadastrar</button>
+					<button class="buttoncolor" type="submit">Cadastrar</button>
 				</form>
 			</div>
 		</div>

@@ -3,13 +3,13 @@
 <html lang="pt-br">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<head th:replace="~{base :: head}"></head>
-	<body>
+	<body id="backforall">
 		<div th:replace="~{base :: logo}"></div>
 	
 		<div class="container">
-			<div th:replace="~{base :: titulo('Meus Repositórios')}"></div>
+			<div th:replace="~{base :: titulo('Meus Repositórios')}" ></div>
 		
-			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3 cardcolor">
 				<div class="navbar-nav">
 					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep}">Todos</a>
 					<a th:classappend="${status} == 'desenvolvimento' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/desenvolvimento}">DESENVOLVIMENTO</a>
@@ -20,7 +20,7 @@
 				<a href="/objrep/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
 			</nav>
 		
-			<div class="card mb-3" th:each="objrep : ${objreps}">
+			<div class="cardcolor card mb-3" th:each="objrep : ${objreps}">
 				<th:block th:switch="${objrep.status.name()}">
 					<div th:case="'DESENVOLVIMENTO'" class="card-header alert-warning" th:text="${objrep.nomeRep}">Nome do Repositório</div>
 					<div th:case="'TERMINADO'" class="card-header alert-success" th:text="${objrep.nomeRep}">Nome do Repositório</div>
@@ -28,7 +28,7 @@
 					<div th:case="'EXCLUIDO'" class="card-header alert-dark" th:text="${objrep.nomeRep}">Nome do Repositório</div>
 				</th:block>
 				
-				<div class="card-body">
+				<div class="cardcolor card-body">
 					<div class="row">
 						<div class="col-12 col-sm-8  mb-3">		
 							<div>Produto</div>

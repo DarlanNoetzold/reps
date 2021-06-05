@@ -1,13 +1,13 @@
 <html>
 	<meta charset="UTF-8"/>
 	<head th:replace="~{base :: head}"></head>
-	<body>
+	<body id="backforall">
 		<div th:replace="~{base :: logo}"></div>
 	
 		<div class="container">
 			<div th:replace="~{base :: titulo('Login')}"></div>
 		
-			<div class="card mb-3">
+			<div class="cardcolor card mb-3">
 				<form th:action="@{/login}" class="card-body" method="post">
 					<div class="form-group">
 						<label for="username">Usuário</label>
@@ -17,7 +17,7 @@
 						<label for="password">Senha</label>
 						<input type="password" name="password" class="form-control" placeholder="senha"/>
 					</div>
-					<button class="btn btn-primary" type="submit">Login</button>
+					<button class="engraved buttoncolor" type="submit">Login</button>
 				</form>
 			</div>
 		</div>
