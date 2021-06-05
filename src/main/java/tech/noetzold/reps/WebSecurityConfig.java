@@ -17,8 +17,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {	
 	@Autowired
 	private DataSource dataSource;
 	
@@ -45,18 +44,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+//		UserDetails user =
+//		 User.builder()
+//			.username("darlan")
+//			.password(encoder.encode("darlan"))
+//			.roles("ADM")
+//			.build();
+		
 		auth
 			.jdbcAuthentication()
 			.dataSource(dataSource)
 			.passwordEncoder(encoder);
 		
-		
-//		UserDetails user =
-//				 User.builder()
-//					.username("darlan")
-//					.password(encoder.encode("darlan"))
-//					.roles("ADM")
-//					.build();
 
 	}
 	
