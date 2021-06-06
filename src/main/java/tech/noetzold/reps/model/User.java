@@ -25,6 +25,9 @@ public class User implements UserDetails {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Objrep> objreps;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+	private List<Objapi> objapis;
+	
 	public String getUsername() {
 		return username;
 	}
