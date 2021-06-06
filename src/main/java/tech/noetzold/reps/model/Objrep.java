@@ -2,6 +2,7 @@ package tech.noetzold.reps.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -27,6 +28,7 @@ public class Objrep {
 	@Enumerated(EnumType.STRING)
 	private StatusRep status;
 	
+	@Column(name="descricao", nullable=false, length=1800)
 	private String descricao;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

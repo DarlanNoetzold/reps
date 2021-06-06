@@ -12,11 +12,11 @@
 			<div class="cardcolor card mt-3">
 				<form th:action="@{/objrep/novo}" th:object="${requisicaoNovoObjrep}" class="card-body" method="post">
 					<div class="form-group">
-						<label for="nomeRep">Produto</label>
+						<label for="nomeRep">Repositório</label>
 						<input th:field="*{nomeRep}" th:errorclass="is-invalid" class="form-control" placeholder="nome do objrep"/>
 						<small>Informa qual o nome do Repositório.</small>
 						<div class="invalid-feedback" th:errors="*{nomeRep}">
-							Erros do nome do produto
+							Erros do nome do repositório
 						</div>
 					</div>
 					<div class="form-group">
@@ -24,7 +24,7 @@
 						<input th:field="*{urlRep}" th:errorclass="is-invalid" class="form-control" placeholder="url do objrep"/>
 						<small>Procure em um site o Repositório que você deseja e cole a url da página aqui.</small>
 						<div class="invalid-feedback" th:errors="*{urlRep}">
-							Erros da url do produto
+							Erros da url do Repositório
 						</div>
 					</div>
 					<div class="form-group">
