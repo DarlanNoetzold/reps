@@ -19,14 +19,14 @@ public class RequisicaoNovoObjrep {
 	public String getNomeRep() {
 		return nomeRep;
 	}
-	public void setNomeRep(String nomeProduto) {
-		this.nomeRep = nomeProduto;
+	public void setNomeRep(String nomeRep) {
+		this.nomeRep = nomeRep;
 	}
 	public String getUrlRep() {
 		return urlRep;
 	}
-	public void setUrlRep(String urlProduto) {
-		this.urlRep = urlProduto;
+	public void setUrlRep(String urlRep) {
+		this.urlRep = urlRep;
 	}
 	public String getUrlImagem() {
 		if(urlImagem == null) {
