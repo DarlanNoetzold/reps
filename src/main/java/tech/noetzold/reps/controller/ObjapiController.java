@@ -10,39 +10,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import tech.noetzold.reps.dto.RequisicaoNovoObjrep;
-import tech.noetzold.reps.model.Objrep;
+import tech.noetzold.reps.dto.RequisicaoNovoObjapi;
+import tech.noetzold.reps.model.Objapi;
 import tech.noetzold.reps.model.User;
-import tech.noetzold.reps.repository.ObjrepRepository;
+import tech.noetzold.reps.repository.ObjapiRepository;
 import tech.noetzold.reps.repository.UserRepository;
 
 @Controller
-@RequestMapping("objrep")
-public class ObjrepController {
-	
+@RequestMapping("objapi")
+public class ObjapiController {
 	@Autowired
-	private ObjrepRepository objrepRepository;
+	private ObjapiRepository objapiRepository;
 	
 	@Autowired
 	private UserRepository userRepository;
 
 	@GetMapping("formulario")
-	public String formulario(RequisicaoNovoObjrep requisicao) {
-		return "objrep/formulario";
+	public String formulario(RequisicaoNovoObjapi requisicao) {
+		return "objapi/formulario";
 	}
 	
 	@PostMapping("novo")
-	public String novo(@Valid RequisicaoNovoObjrep requisicao, BindingResult result) {
+	public String novo(@Valid RequisicaoNovoObjapi requisicao, BindingResult result) {
 		if(result.hasErrors()) {
-			return "objrep/formulario";
+			return "objapi/formulario";
 		}
 		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		
 		User usuario = userRepository.findByUsername(username);
-		Objrep objrep = requisicao.toObjrep();
-		objrep.setUser(usuario);
-		objrepRepository.save(objrep);
+		Objapi objapi = requisicao.toObjapi();
+		objapi.setUser(usuario);
+		objapiRepository.save(objapi);
 		return "redirect:/home";
 	}
 }

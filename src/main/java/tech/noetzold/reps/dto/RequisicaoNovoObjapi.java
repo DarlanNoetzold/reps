@@ -51,7 +51,7 @@ public class RequisicaoNovoObjapi {
 		this.status = status;
 	}
 	
-	public Objapi toObjrep() {
+	public Objapi toObjapi() {
 		Objapi objapi = new Objapi();
 		objapi.setDescricao(descricao);
 		objapi.setNomeApi(nomeApi);
