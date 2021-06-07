@@ -18,10 +18,10 @@ public interface ObjapiRepository extends JpaRepository<Objapi, Long> {
 	@Cacheable("books")
 	List<Objapi> findByStatus(StatusRep status, Pageable sort);
 
-	@Query("select p from Objrep p join p.user u where u.username = :username")
+	@Query("select p from Objapi p join p.user u where u.username = :username")
 	List<Objapi> findAllByUsuario(@Param("username")String username);
 
-	@Query("select p from Objrep p join p.user u where u.username = :username and p.status = :status")
+	@Query("select p from Objapi p join p.user u where u.username = :username and p.status = :status")
 	List<Objapi> findByStatusEUsuario(@Param("status")StatusRep status, @Param("username")String username);
 
 }

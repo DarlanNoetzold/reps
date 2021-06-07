@@ -3,7 +3,7 @@ package tech.noetzold.reps.dto;
 import javax.validation.constraints.NotBlank;
 
 import tech.noetzold.reps.model.Objapi;
-import tech.noetzold.reps.model.StatusRep;
+import tech.noetzold.reps.model.StatusApi;
 
 public class RequisicaoNovoObjapi {
 	@NotBlank
@@ -14,7 +14,7 @@ public class RequisicaoNovoObjapi {
 	private String urlImagemApi;
 	private String descricao;
 	
-	private StatusRep status;
+	private StatusApi status;
 	
 	public String getNomeApi() {
 		return nomeApi;
@@ -44,10 +44,10 @@ public class RequisicaoNovoObjapi {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public StatusRep getStatus() {
+	public StatusApi getStatus() {
 		return status;
 	}
-	public void setStatus(StatusRep status) {
+	public void setStatus(StatusApi status) {
 		this.status = status;
 	}
 	

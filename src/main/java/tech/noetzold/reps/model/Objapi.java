@@ -22,7 +22,7 @@ public class Objapi {
 	private String urlImagemApi;
 	
 	@Enumerated(EnumType.STRING)
-	private StatusRep status;
+	private StatusApi status;
 	
 	@Column(name="descricao", nullable=false, length=1800)
 	private String descricao;
@@ -63,11 +63,11 @@ public class Objapi {
 		this.urlImagemApi = urlImagemApi;
 	}
 
-	public StatusRep getStatus() {
+	public StatusApi getStatus() {
 		return status;
 	}
 
-	public void setStatus(StatusRep status) {
+	public void setStatus(StatusApi status) {
 		this.status = status;
 	}
 
