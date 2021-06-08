@@ -33,22 +33,22 @@
 				</div>
 			</div>
 			<div class="card mb-3" th:each="objapi : ${objapis}">
-				<div class="card-header alert-dark" th:text="${objrep.nomeRep}">Nome do repositório</div>
+				<div class="card-header alert-dark" th:text="objapi.nomeApi">Nome do repositório</div>
 				
 				<div class="cardcolor card-body">
 					<div class="row">
 						<div class="col-12 col-sm-8  mb-3">
 							<div>Produto</div>
-							<div> <input class="form-control" th:value="${objrep.urlRep}" value="url do repositorio"/></div>
+							<div> <input class="form-control" th:value="${objapi.urlApi}" value="url do repositorio"/></div>
 							
 							<div>Descricao</div>
 							<div>
-								<textarea class="form-control" th:text="${objrep.descricao}">descrição do pedido</textarea>
+								<textarea class="form-control" th:text="${objapi.descricao}">descrição do pedido</textarea>
 							</div>
 						</div>
 						<div class="col-12 col-sm-4">
 							<div>
-								<img class="img-thumbnail" th:src="${objrep.urlImagem}" src=""/>
+								<img class="img-thumbnail" th:src="${objapi.urlImagemApi}" src=""/>
 							</div>
 						</div>
 					</div>
