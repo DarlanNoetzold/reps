@@ -10,18 +10,18 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import tech.noetzold.reps.model.Objapi;
-import tech.noetzold.reps.model.StatusRep;
+import tech.noetzold.reps.model.StatusApi;
 
 @Repository
 public interface ObjapiRepository extends JpaRepository<Objapi, Long> {
 	
 	@Cacheable("books")
-	List<Objapi> findByStatus(StatusRep status, Pageable sort);
+	List<Objapi> findByStatus(StatusApi status, Pageable sort);
 
 	@Query("select p from Objapi p join p.user u where u.username = :username")
 	List<Objapi> findAllByUsuario(@Param("username")String username);
 
 	@Query("select p from Objapi p join p.user u where u.username = :username and p.status = :status")
-	List<Objapi> findByStatusEUsuario(@Param("status")StatusRep status, @Param("username")String username);
+	List<Objapi> findByStatusEUsuario(@Param("status")StatusApi status, @Param("username")String username);
 
 }
