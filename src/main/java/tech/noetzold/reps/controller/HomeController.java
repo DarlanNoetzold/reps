@@ -38,7 +38,7 @@ public class HomeController {
 		PageRequest paginacaoapis = PageRequest.of(0, 10, sortapis);
 		
 		List<Objapi> objapis = objApiRepository.findByStatus(StatusApi.ATIVADO, paginacaoapis);
-		List<Objrep> objreps = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacaoreps);
+		List<Objrep> objreps = objRepRepository.findByStatus(StatusRep.TERMINADO, paginacaoreps);
 		model.addAttribute("objapis", objapis);
 		model.addAttribute("objreps", objreps);
 		
