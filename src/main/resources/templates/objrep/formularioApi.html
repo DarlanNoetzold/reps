@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<head th:replace="~{base :: head}"></head>
+	<body id="backforall">
+		<div th:replace="~{base :: logo}"></div>
+	
+		<div class="container">
+			<div th:replace="~{base :: titulo('Nova API')}"></div>
+			
+			<div class="cardcolor card mt-3">
+				<form th:action="@{/objapi/novo}" th:object="${requisicaoNovoObjapi}" class="card-body" method="post">
+					<div class="form-group">
+						<label for="nomeApi">API</label>
+						<input th:field="*{nomeApi}" th:errorclass="is-invalid" class="form-control" placeholder="nome da API"/>
+						<small>Informa qual o nome da API.</small>
+						<div class="invalid-feedback" th:errors="*{nomeRep}">
+							Erros do nome da API
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="urlApi">Url</label>
+						<input th:field="*{urlApi}" th:errorclass="is-invalid" class="form-control" placeholder="url do objapi"/>
+						<small>Procure em um site o Repositório que você deseja e cole a url da página aqui.</small>
+						<div class="invalid-feedback" th:errors="*{urlApi}">
+							Erros da url da API
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="urlImagemApi">Imagem</label>
+						<input th:field="*{urlImagemApi}" th:errorclass="is-invalid" class="form-control" placeholder="url da imagem"/>
+						<small>Copie a url de uma boa imagem da API e cole aqui.</small>
+						<div class="invalid-feedback" th:errors="*{urlImagem}">
+							Erros dua url da imagem
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="status">Status da API</label>
+						<select th:field="*{status}">
+    						<option th:each="Status : ${T(tech.noetzold.reps.model.StatusApi).values()}" th:value="${Status}" th:text="${Status}"></option>
+						</select>
+						<small>Selecione o Status.</small>
+						<div class="invalid-feedback" th:errors="*{status}">
+							Erro
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="descricao">Descricao</label>
+						<textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes importantes"></textarea>
+					</div>
+					<button class="buttoncolor" type="submit">Cadastrar</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
