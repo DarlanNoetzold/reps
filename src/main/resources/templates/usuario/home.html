@@ -16,6 +16,8 @@
 					<a th:classappend="${status} == 'terminado' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/terminado}">TERMINADO</a>
 					<a th:classappend="${status} == 'desconhecido' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/desconhecido}">DESCONHECIDO</a>
 					<a th:classappend="${status} == 'excluido' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/excluido}">EXCLUIDO</a>
+					<a th:classappend="${status} == 'ativado' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objapi/ativado}">ATIVADO</a>
+					<a th:classappend="${status} == 'desativado' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objapi/desativado}">DESATIVADO</a>
 				</div>
 				<a href="/objrep/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
 			</nav>
@@ -31,7 +33,7 @@
 				<div class="cardcolor card-body">
 					<div class="row">
 						<div class="col-12 col-sm-8  mb-3">		
-							<div>Produto</div>
+							<div>Repositório</div>
 							<div> <input class="form-control" th:value="${objrep.urlRep}" value="url do objrep"/></div>
 							
 							<div>Descrição</div>
@@ -42,6 +44,31 @@
 						<div class="col-12 col-sm-4">
 							<div>
 								<img class="img-thumbnail" th:src="${objrep.urlImagem}" src=""/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cardcolor card mb-3" th:each="objrep : ${objreps}">
+				<th:block th:switch="${objrep.status.name()}">
+					<div th:case="'ATIVADO'" class="card-header alert-warning" th:text="${objapi.nomeApi}">Nome da API</div>
+					<div th:case="'DESATIVADO'" class="card-header alert-success" th:text="${objapi.nomeApi}">Nome da API</div>
+				</th:block>
+				
+				<div class="cardcolor card-body">
+					<div class="row">
+						<div class="col-12 col-sm-8  mb-3">		
+							<div>API</div>
+							<div> <input class="form-control" th:value="${objapi.urlApi}" value="url do objapi"/></div>
+							
+							<div>Descrição</div>
+							<div>
+								<textarea class="form-control" th:text="${objapi.descricao}">descrição da API</textarea>
+							</div>
+						</div>
+						<div class="col-12 col-sm-4">
+							<div>
+								<img class="img-thumbnail" th:src="${objapi.urlImagemApi}" src=""/>
 							</div>
 						</div>
 					</div>
