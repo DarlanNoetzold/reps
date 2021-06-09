@@ -25,6 +25,10 @@ public class RequisicaoNovoObjapi {
 	public String getUrlApi() {
 		return urlApi;
 	}
+	
+	public void setUrlApi(String urlApi) {
+		this.urlApi = urlApi;
+	}
 	public void Api(String urlApi) {
 		this.urlApi = urlApi;
 	}
