@@ -15,14 +15,14 @@
 						<label for="nomeApi">API</label>
 						<input th:field="*{nomeApi}" th:errorclass="is-invalid" class="form-control" placeholder="nome da API"/>
 						<small>Informa qual o nome da API.</small>
-						<div class="invalid-feedback" th:errors="*{nomeRep}">
+						<div class="invalid-feedback" th:errors="*{nomeApi}">
 							Erros do nome da API
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="urlApi">Url</label>
 						<input th:field="*{urlApi}" th:errorclass="is-invalid" class="form-control" placeholder="url do objapi"/>
-						<small>Procure em um site o Repositório que você deseja e cole a url da página aqui.</small>
+						<small>Procure em um site a API que você deseja e cole a url da página aqui.</small>
 						<div class="invalid-feedback" th:errors="*{urlApi}">
 							Erros da url da API
 						</div>
@@ -31,7 +31,7 @@
 						<label for="urlImagemApi">Imagem</label>
 						<input th:field="*{urlImagemApi}" th:errorclass="is-invalid" class="form-control" placeholder="url da imagem"/>
 						<small>Copie a url de uma boa imagem da API e cole aqui.</small>
-						<div class="invalid-feedback" th:errors="*{urlImagem}">
+						<div class="invalid-feedback" th:errors="*{urlImagemApi}">
 							Erros dua url da imagem
 						</div>
 					</div>
