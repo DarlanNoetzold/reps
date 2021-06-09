@@ -31,13 +31,17 @@ public class HomeController {
 	
 	@GetMapping
 	public String home(Model model, Principal principal) {
-		Sort sort = Sort.by("nomeRep").descending();
-		PageRequest paginacao = PageRequest.of(0, 10, sort);
+		Sort sortreps = Sort.by("nomeRep").descending();
+		PageRequest paginacaoreps = PageRequest.of(0, 10, sortreps);
 		
-		List<Objrep> objreps = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacao);
-		List<Objapi> objapis = objApiRepository.findByStatus(StatusApi.ATIVADO, paginacao);
-		model.addAttribute("objreps", objreps);
+		Sort sortapis = Sort.by("nomeApi").descending();
+		PageRequest paginacaoapis = PageRequest.of(0, 10, sortapis);
+		
+		List<Objapi> objapis = objApiRepository.findByStatus(StatusApi.ATIVADO, paginacaoapis);
+		List<Objrep> objreps = objRepRepository.findByStatus(StatusRep.DESENVOLVIMENTO, paginacaoreps);
 		model.addAttribute("objapis", objapis);
+		model.addAttribute("objreps", objreps);
+		
 		
 		return "home";
 	}

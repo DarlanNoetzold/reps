@@ -49,8 +49,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="cardcolor card mb-3" th:each="objrep : ${objreps}">
-				<th:block th:switch="${objrep.status.name()}">
+			<div class="cardcolor card mb-3" th:each="objapi : ${objapis}">
+				<th:block th:switch="${objrapi.status.name()}">
 					<div th:case="'ATIVADO'" class="card-header alert-warning" th:text="${objapi.nomeApi}">Nome da API</div>
 					<div th:case="'DESATIVADO'" class="card-header alert-success" th:text="${objapi.nomeApi}">Nome da API</div>
 				</th:block>
