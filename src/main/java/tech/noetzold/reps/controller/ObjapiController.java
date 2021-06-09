@@ -25,15 +25,15 @@ public class ObjapiController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@GetMapping("formulario")
+	@GetMapping("formularioApi")
 	public String formulario(RequisicaoNovoObjapi requisicao) {
-		return "objapi/formulario";
+		return "objapi/formularioApi";
 	}
 	
 	@PostMapping("novo")
 	public String novo(@Valid RequisicaoNovoObjapi requisicao, BindingResult result) {
 		if(result.hasErrors()) {
-			return "objapi/formulario";
+			return "objapi/formularioApi";
 		}
 		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
