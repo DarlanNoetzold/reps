@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="card mb-3" th:each="objapi : ${objapis}">
-				<div class="card-header alert-dark" th:text="objapi.nomeApi">Nome da API</div>
+				<div class="card-header alert-dark" th:text="${objapi.nomeApi}">Nome da API</div>
 				
 				<div class="cardcolor card-body">
 					<div class="row">
