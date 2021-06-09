@@ -19,7 +19,8 @@
 					<a th:classappend="${status} == 'ativado' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objapi/ativado}">ATIVADO</a>
 					<a th:classappend="${status} == 'desativado' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objapi/desativado}">DESATIVADO</a>
 				</div>
-				<a href="/objrep/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+				<a href="/objrep/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo Rep</button></a>
+				<a href="/objapi/formularioApi"><button class="btn btn-outline-secondary my-2 my-sm-0">Nova API</button></a>
 			</nav>
 		
 			<div class="cardcolor card mb-3" th:each="objrep : ${objreps}">
