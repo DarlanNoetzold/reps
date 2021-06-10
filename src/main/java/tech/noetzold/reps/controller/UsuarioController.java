@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import tech.noetzold.reps.model.Objapi;
 import tech.noetzold.reps.model.Objrep;
+import tech.noetzold.reps.model.StatusApi;
 import tech.noetzold.reps.model.StatusRep;
 import tech.noetzold.reps.repository.ObjapiRepository;
 import tech.noetzold.reps.repository.ObjrepRepository;
@@ -37,9 +38,19 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("objrep/{status}")
-	public String porStatus(@PathVariable("status") String status, Model model, Principal principal) {
+	public String porStatusRep(@PathVariable("status") String status, Model model, Principal principal) {
 		List<Objrep> objrep = objrepRepository.findByStatusEUsuario(StatusRep.valueOf(status.toUpperCase()), principal.getName());
 		model.addAttribute("objreps", objrep);
+		
+		model.addAttribute("status", status);
+		return "usuario/home";
+	}
+	
+	@GetMapping("objapi/{status}")
+	public String porStatusApi(@PathVariable("status") String status, Model model, Principal principal) {
+		List<Objapi> objapi = objApiRepository.findByStatusEUsuario(StatusApi.valueOf(status.toUpperCase()), principal.getName());
+		model.addAttribute("objapis", objapi);
+		
 		model.addAttribute("status", status);
 		return "usuario/home";
 	}
