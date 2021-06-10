@@ -11,7 +11,7 @@
 		
 			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 				<div class="navbar-nav">
-					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep}">Todos</a>
+					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" th:href="@{/usuario/obj}">Todos</a>
 					<a th:classappend="${status} == 'desenvolvimento' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/desenvolvimento}">DESENVOLVIMENTO</a>
 					<a th:classappend="${status} == 'terminado' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/terminado}">TERMINADO</a>
 					<a th:classappend="${status} == 'desconhecido' ? 'active'" class="nav-item nav-link" th:href="@{/usuario/objrep/desconhecido}">DESCONHECIDO</a>

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import tech.noetzold.reps.model.Objapi;
 import tech.noetzold.reps.model.Objrep;
 import tech.noetzold.reps.model.StatusRep;
+import tech.noetzold.reps.repository.ObjapiRepository;
 import tech.noetzold.reps.repository.ObjrepRepository;
 
 @Controller
@@ -21,10 +23,16 @@ public class UsuarioController {
 	@Autowired
 	private ObjrepRepository objrepRepository;
 	
-	@GetMapping("objrep")
+	@Autowired
+	private ObjapiRepository objApiRepository;
+	
+	@GetMapping("obj")
 	public String home(Model model, Principal principal) {
 		List<Objrep> objrep = objrepRepository.findAllByUsuario(principal.getName());
 		model.addAttribute("objreps", objrep);
+		List<Objapi> objapi = objApiRepository.findAllByUsuario(principal.getName());
+		model.addAttribute("objapis", objapi);
+		
 		return "usuario/home";
 	}
 	
