@@ -7,8 +7,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import tech.noetzold.reps.dto.RequisicaoNovoObjrep;
 import tech.noetzold.reps.model.Objrep;
@@ -30,6 +32,12 @@ public class ObjrepController {
 	public String formulario(RequisicaoNovoObjrep requisicao) {
 		return "objrep/formulario";
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "remover/{id}")
+    public String remover(@PathVariable("id") Long id) {
+		objrepRepository.deleteById(id);
+        return "redirect:/home";
+    }
 	
 	@PostMapping("novo")
 	public String novo(@Valid RequisicaoNovoObjrep requisicao, BindingResult result) {
