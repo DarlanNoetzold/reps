@@ -15,6 +15,7 @@ import tech.noetzold.reps.model.StatusRep;
 @Repository
 public interface ObjrepRepository extends JpaRepository<Objrep, Long> {
 	
+	
 	@Cacheable("books")
 	List<Objrep> findByStatus(StatusRep status, Pageable sort);
 
