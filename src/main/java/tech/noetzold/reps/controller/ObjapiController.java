@@ -7,6 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,6 +30,12 @@ public class ObjapiController {
 	public String formulario(RequisicaoNovoObjapi requisicao) {
 		return "objapi/formularioApi";
 	}
+	
+	@GetMapping("remover/{id}")
+    public String remover(@PathVariable("id") Long id) {
+		objapiRepository.deleteById(id);
+        return "redirect:/home";
+    }
 	
 	@PostMapping("novo")
 	public String novo(@Valid RequisicaoNovoObjapi requisicao, BindingResult result) {

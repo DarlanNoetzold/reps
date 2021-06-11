@@ -33,7 +33,7 @@ public class ObjrepController {
 		return "objrep/formulario";
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "remover/{id}")
+	@GetMapping("remover/{id}")
     public String remover(@PathVariable("id") Long id) {
 		objrepRepository.deleteById(id);
         return "redirect:/home";

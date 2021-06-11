@@ -41,7 +41,7 @@
 							<div>
 								<textarea class="form-control" th:text="${objrep.descricao}">descrição do Repositório</textarea>
 							</div>
-							<a href="<c:url value='objreps/remover'/>/${objrep.id}">Remover</a>
+							<a th:href="@{/objrep/remover/{id}(id = ${objrep.id}) }">Remover</a>
 						</div>
 						<div class="col-12 col-sm-4">
 							<div>
@@ -67,7 +67,7 @@
 							<div>
 								<textarea class="form-control" th:text="${objapi.descricao}">descrição da API</textarea>
 							</div>
-							
+							<a th:href="@{/objapi/remover/{id}(id = ${objapi.id}) }">Remover</a>
 						</div>
 						
 						<div class="col-12 col-sm-4">
