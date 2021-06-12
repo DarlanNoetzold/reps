@@ -16,18 +16,21 @@
 ## Documentação:
 * Link: https://darlannoetzold.github.io/reps/
 * Imagem do diagrama das entidades:
-![image](https://user-images.githubusercontent.com/41628589/120195493-3ed18980-c1f5-11eb-88ee-e9418726deaa.png)
+<img src="https://github.com/DarlanNoetzold/reps/blob/main/reps06.jpg" />
 
 
 
 ### Página Home do usuário, com seus repositórios e API's criados e uma barra de filtro, além dos botões para criação de novos componentes.
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps01.jpg" />
 
-### Cadastro de pedidos. 
-<img src="https://github.com/DarlanNoetzold/Mudi/blob/main/mudi02.jpg" />
+### Cadastro de Repositório. 
+<img src="https://github.com/DarlanNoetzold/reps/blob/main/reps02.jpg" />
 
-### Controle de formulários.
-<img src="https://github.com/DarlanNoetzold/Mudi/blob/main/mudi03.jpg" />
+### Cadastro de API.
+<img src="https://github.com/DarlanNoetzold/reps/blob/main/reps03.jpg" />
 
 ### Login de Usuário.
-<img src="https://github.com/DarlanNoetzold/Mudi/blob/main/mudi04.jpg" />
+<img src="https://github.com/DarlanNoetzold/reps/blob/main/reps04.jpg" />
+
+### Página Home Default pra quem não esta logado.
+<img src="https://github.com/DarlanNoetzold/reps/blob/main/reps05.jpg" />
