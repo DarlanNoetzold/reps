@@ -3,6 +3,8 @@
 ## Projeto
 * Projeto de compartilhamento de repositórios e API's.
 * Foi criado um login em memória e em Banco de Dados.
+* Uso de CRUD completo para o gerenciamento dos repositórios.
+* Segurança do site feita com Spring Security, o qual gerencia os logins em memória e em Banco.
 
 ## Desenvolvimento
 * Foi usado Java 1.8.
