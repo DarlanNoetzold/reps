@@ -20,7 +20,7 @@
 * Imagem do diagrama das entidades:
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps06.jpg" />
 
-
+---
 
 ### Página Home do usuário, com seus repositórios e API's criados e uma barra de filtro, além dos botões para criação de novos componentes.
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps01.jpg" />
