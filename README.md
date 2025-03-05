@@ -1,44 +1,46 @@
 # reps
- 
-## Projeto
-* Projeto de compartilhamento de repositórios e API's.
-* Foi criado um login em memória e em Banco de Dados.
-* Uso de CRUD completo para o gerenciamento dos repositórios.
-* Segurança do site feita com Spring Security, o qual gerencia os logins em memória e em Banco.
 
-## Desenvolvimento
-* Foi usado Java 1.8.
+## Project
+* Project for sharing repositories and APIs.
+* A login in memory and in a database was created.
+* Full CRUD was used to manage repositories.
+* Site security was done with Spring Security, which manages logins in memory and in the database.
+
+## Development
+* Java 1.8 was used.
 * Thymeleaf 3.0.12.
 * Spring Framework 5.3.7.
 * Spring DevTools.
-* MariaDB de Banco de Dados.
+* MariaDB for the database.
 
 ---
 
-## Documentação:
+## Documentation:
 * Link: https://darlannoetzold.github.io/reps/
-* Imagem do diagrama das entidades:
+* Image of the entity diagram:
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps06.jpg" />
 
 ---
 
-### Página Home do usuário, com seus repositórios e API's criados e uma barra de filtro, além dos botões para criação de novos componentes.
+### User's home page, with their repositories and APIs created and a filter bar, in addition to the buttons for creating new components.
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps01.jpg" />
 
-### Cadastro de Repositório. 
+### Repository Registration.
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps02.jpg" />
 
-### Cadastro de API.
+### API Registration.
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps03.jpg" />
 
-### Login de Usuário.
+### User Login.
+
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps04.jpg" />
 
-### Página Home Default pra quem não esta logado.
+### Default Home Page for those not logged in.
+
 <img src="https://github.com/DarlanNoetzold/reps/blob/main/reps05.jpg" />
 
 <BR>
 
- ---
- 
- ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
+---
+
+⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
